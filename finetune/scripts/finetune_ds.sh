@@ -1,7 +1,6 @@
 
 set -ex
 
-# 函数用于执行训练过程
 run_finetune() {
     local LR=$1
     local NUM_GPUS=$2
@@ -37,10 +36,6 @@ run_finetune() {
         --deepspeed configs/deepspeed.json 2>&1 | tee ${OUTPUT_DIR}/train.log
 }
 
-# 设置通用变量
 BASE_MODEL_PATH=BASE_MODEL_PATH
 
-# 调用函数执行不同的训练任务
-
-# 调用函数执行不同的训练任务
 run_finetune 2e-6 8 3584 512 1 16 3120 520 RUN_NAME DATASET_PATH
